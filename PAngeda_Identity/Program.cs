@@ -49,8 +49,8 @@ namespace PAngeda_Identity
 
                //REMOVE
                 Console.WriteLine("Digite o nome que deseja remover: ");
-                string x = Console.ReadLine();
-                Person name = new PersonContext().People.FirstOrDefault(f => f.Name == x);
+                string nome = Console.ReadLine();
+                Person name = new PersonContext().People.FirstOrDefault(f => f.Name == nome);
                 context.Entry(name).State = EntityState.Deleted;
                 context.People.Remove(name);
                 context.SaveChanges();
@@ -66,7 +66,7 @@ namespace PAngeda_Identity
                 if (findx != null)
                 {
                     context.Entry(findx).State = EntityState.Modified;
-                    findx.Name = "Paula";
+                    findx.Name = "Valdomiro";
                     context.SaveChanges();
                 }
                 Console.WriteLine("Dado alteraido!\n\n enter para continuar.");
